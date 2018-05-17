@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on My Portfolio</title>
-    <link>floriskappeyne.github.io/post/</link>
+    <link>https://floriskappeyne.github.io/post/</link>
     <description>Recent content in Projects on My Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 16 Apr 2017 10:58:08 -0400</lastBuildDate>
     
-	<atom:link href="floriskappeyne.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://floriskappeyne.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Meadow Folk</title>
-      <link>floriskappeyne.github.io/post/meadow-folk/</link>
+      <link>https://floriskappeyne.github.io/post/meadow-folk/</link>
       <pubDate>Sun, 16 Apr 2017 10:58:08 -0400</pubDate>
       
-      <guid>floriskappeyne.github.io/post/meadow-folk/</guid>
+      <guid>https://floriskappeyne.github.io/post/meadow-folk/</guid>
       <description>This video cannot be played.  The project Meadow Folk is an open-world farming and adventuring game where you save ancient colossi from a spreading corruption. The name &amp;ldquo;Meadow Folk&amp;rdquo; is the code name for my team&amp;rsquo;s 3rd year project. Its production started in September 2017, and it will be ongoing until the end of this school year. It is the longest project I&amp;rsquo;ve worked on so far, and it also was the biggest team: we started with 30 people, but this steadily grew into 35 over the weeks.</description>
     </item>
     
     <item>
       <title>My main side project: A Path Tracer</title>
-      <link>floriskappeyne.github.io/post/path-tracer/</link>
+      <link>https://floriskappeyne.github.io/post/path-tracer/</link>
       <pubDate>Sat, 15 Apr 2017 11:00:59 -0400</pubDate>
       
-      <guid>floriskappeyne.github.io/post/path-tracer/</guid>
+      <guid>https://floriskappeyne.github.io/post/path-tracer/</guid>
       <description>Summary The Path Tracer is a program that I&amp;rsquo;ve been working on for a long time by now, but very sporadically. In my first year at IGAD, a 3rd year sort of became my mentor, and he showed me what ray and path tracing are, and what you can learn from it. Since then I&amp;rsquo;ve made several, and I started on this one somewhere around March 2016. It started out as a small project, but I kept adding new things (especially when I started reading the PBR book (the first info source below)).</description>
     </item>
     
     <item>
       <title>AGR: The Fastest Drifter</title>
-      <link>floriskappeyne.github.io/post/agr/</link>
+      <link>https://floriskappeyne.github.io/post/agr/</link>
       <pubDate>Fri, 14 Apr 2017 11:25:05 -0400</pubDate>
       
-      <guid>floriskappeyne.github.io/post/agr/</guid>
+      <guid>https://floriskappeyne.github.io/post/agr/</guid>
       <description>This video cannot be played.  The project AGR: The Fastest Drifter is an Anti-Gravity Racing game, made with the custom cross-platform (Windows and PS4) Voodoo Engine. Created by a team of 6 programmers at first (the first block of 8 weeks), and 19 people (7 programmers, 12 designers and artists) at the end, it is one of the biggest projects I have worked on so far. In the end, it featured a fully functioning racing game for both single player and local multiplayer, audio, particle effects, several post processing effects on top of the physically based rendering, a complete game-flow with UI and intro cinematics and a suite of tools usable by designers to tweak the game while playing it.</description>
     </item>
     
