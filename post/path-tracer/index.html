@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My Portfolio  | My main side project: A Path Tracer</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.37" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    <link href='floriskappeyne.github.io/dist/main.css' rel='stylesheet' type="text/css" />
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="My main side project: A Path Tracer" />
+<meta property="og:description" content="My attempt at making something pretty" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="floriskappeyne.github.io/post/path-tracer/" />
+
+
+
+<meta property="article:published_time" content="2017-04-15T11:00:59-04:00"/>
+
+<meta property="article:modified_time" content="2017-04-15T11:00:59-04:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="My main side project: A Path Tracer">
+<meta itemprop="description" content="My attempt at making something pretty">
+
+
+<meta itemprop="datePublished" content="2017-04-15T11:00:59-04:00" />
+<meta itemprop="dateModified" content="2017-04-15T11:00:59-04:00" />
+<meta itemprop="wordCount" content="706">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My main side project: A Path Tracer"/>
+<meta name="twitter:description" content="My attempt at making something pretty"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('floriskappeyne.github.io/images/path-tracer.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="floriskappeyne.github.io" class="f3 fw2 hover-white no-underline white-90 dib">
+      My Portfolio
+    </a>
+    <div class="flex-l items-center">
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="floriskappeyne.github.io/about/" title="About me page">
+              About me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="floriskappeyne.github.io/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="floriskappeyne.github.io/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">My main side project: A Path Tracer</h1>
+        
+          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+            My attempt at making something pretty
+          </h2>
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <p class="f6 b helvetica tracked">
+        
+        POST
+      </p>
+      <h1 class="f1 athelas">
+        My main side project: A Path Tracer
+      </h1>
+        
+        
+      <time class="f6 mv4 dib tracked" datetime="2017-04-15T11:00:59-04:00">
+        April 15, 2017
+      </time>
+      <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray">
+        
+
+<h3 id="summary">Summary</h3>
+
+<p>The Path Tracer is a program that I&rsquo;ve been working on for a long time by now, but very sporadically. In my first year at IGAD, a 3rd year sort of became my mentor, and he showed me what ray and path tracing are, and what you can learn from it. Since then I&rsquo;ve made several, and I started on this one somewhere around March 2016. It started out as a small project, but I kept adding new things (especially when I started reading the PBR book (the first info source below)). It is a project in which I try out new things, new designs, and it has seen constant rewrites. In it you can find different naming conventions from different periods in time, &lsquo;#defines&rsquo; and &lsquo;static constexpr&rsquo; used almost interchangeably for values, making it a project uniquely representative of my learning curve and interests.</p>
+
+<h3 id="the-goal">The goal</h3>
+
+<p>Get as far as possible. I have plenty of ideas, and I will probably continue working on this project low key for the years to come. The long term goals are to make somewhat of a scene editor, plenty of optimizations and de-noising features, multiple renderer types (ray tracer, rasterizer for quick previews) and much more. For now, the short term goals are to fix the bug with the normals on triangle meshes and to get texture and model loading in. I also have many other ideas such as writing more BXDFs, post processing effects and easy object placement in the scene, because working through a Json file isn&rsquo;t exactly user friendly.</p>
+
+<h3 id="features">Features</h3>
+
+<p>My path tracer currently supports a number of features. They might still be small, but they are very flexible, and extending them will be quite easy, due to the heavy use of interfaces.</p>
+
+<h5 id="feature-list">Feature list:</h5>
+
+<ul>
+<li>Multiple render modes
+
+<ul>
+<li>Ray Traced multi depth (with point lights),</li>
+<li>Ray Traced Single Depth (just trace a ray and put the diffuse colour on the screen),</li>
+<li>Path Traced (all out fanciness),</li>
+<li>Multiple debug renderers such as BVH Depth and Normal rendering.</li>
+</ul></li>
+<li>Multiple primitives (triangles/meshes, spheres, disks, with the capability of adding more quite easily)</li>
+<li>Multiple Shading algorithms (I currently have a Mirror Material and a Diffuse Material)</li>
+<li>Easy extendibility (Filters, Primitives, Renderers, Cameras, Samplers)</li>
+<li>A Dual Acceleration Structure - A top level BVH (TopLevelBVH) which has all primitives (all meshes, spheres and disks in the scene), and a bottom level BVH (MiniBVH) for each mesh primitive. I did this because each primitive intersection is a virtual call, but a lot of layers in the BVH were for the triangles of the mesh, which were all of one type. By separating them I could get one slow  top level BVH to allow for multiple primitive types, and a fast mesh BVH to allow for big models. Also, this is more memory friendly as I have multiple instances of the same mesh/BVH combo, instead of baking them into the main BVH. This is more computationally expensive though, since I have to transform rays to mesh-space for an intersection test.</li>
+<li>typedefs for most built-in types. I can swap between floats and doubles by turning on or off a define.</li>
+<li>Multithreaded on release</li>
+<li>Several filters (to blur the image a bit to make it converge faster) on debug</li>
+<li>Json scene loading</li>
+<li>Custom Math (Vec2, template Vec3, 4x4 matrix, Transform class supporting angle axis rotations, Euler rotations, non-uniform scaling and translating)</li>
+</ul>
+
+<h3 id="sources">Sources</h3>
+
+<p>I got information from a lot of sources, but there are a few that are worth special mention.</p>
+
+<h5 id="sources-of-information">Sources of information:</h5>
+
+<ul>
+<li>Max Oomen, a fellow student who mentored a friend of mine and me throughout year one (he was in year 3 at the time)</li>
+<li>Jacco Bikkers, who used to be a teacher at my school (inspiration, and the idea to do ray/path tracing)</li>
+<li>&ldquo;Physically based rendering : from theory to implementation&rdquo; by Matt Pharr, Wenzel Jakop and Greg Humphreys. (software design for Cameras, Samplers, Filters, Renderers etcetera)</li>
+<li><a href="https://www.scratchapixel.com/index.php?redirect">https://www.scratchapixel.com/index.php?redirect</a> (some of the basic math theory, intersection tests, general lookups)</li>
+<li>Jacco Bikkers&rsquo; thesis (using multiple acceleration structure layers. He uses three, but I think two will do for me so far)</li>
+<li><a href="https://www.youtube.com/channel/UCsyHonfwHi4fLb2lkq0DEAA">https://www.youtube.com/channel/UCsyHonfwHi4fLb2lkq0DEAA</a> ChiliTomatoNoodle, a YouTuber who taught me how to program and whose framework I&rsquo;ve been using for almost every side project I have.</li>
+</ul>
+
+      </section>
+      
+
+
+    </article>
+    <div class="ph3 mt2 mt6-ns">
+      
+
+
+
+
+
+
+
+  <div class="bg-light-gray pa3">
+    <ul>
+      <li class="list b mb3">
+        2 More Posts
+      </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="floriskappeyne.github.io/post/meadow-folk/" class="link ph2 pv2 db black">
+            Meadow Folk
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="floriskappeyne.github.io/post/path-tracer/" class="link ph2 pv2 db black o-50">
+            My main side project: A Path Tracer
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="floriskappeyne.github.io/post/agr/" class="link ph2 pv2 db black">
+            AGR: The Fastest Drifter
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="floriskappeyne.github.io" >
+    &copy; 2018 My Portfolio
+  </a>
+  
+
+
+
+  <a href="https://twitter.com/GoHugoIO" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+
+
+
+
+  </div>
+</footer>
+
+    <script src="floriskappeyne.github.io/dist/app.bundle.js" async></script>
+
+  </body>
+</html>
