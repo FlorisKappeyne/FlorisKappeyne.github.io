@@ -49,7 +49,7 @@
 
 <meta itemprop="datePublished" content="2017-04-15T11:00:59-04:00" />
 <meta itemprop="dateModified" content="2017-04-15T11:00:59-04:00" />
-<meta itemprop="wordCount" content="706">
+<meta itemprop="wordCount" content="382">
 
 
 
@@ -68,7 +68,7 @@
 
   
   
-  <header class="cover bg-top" style="background-image: url('https://floriskappeyne.github.io/images/path-tracer.jpg');">
+  <header class="cover bg-top" style="background-image: url('https://floriskappeyne.github.io/images/path-tracer.png');">
     <div class="pb3-m pb6-l bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
@@ -136,45 +136,43 @@
       <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray">
         
 
-<h3 id="summary">Summary</h3>
+<h3 id="the-project">The project</h3>
 
-<p>The Path Tracer is a program that I&rsquo;ve been working on for a long time by now, but very sporadically. In my first year at IGAD, a 3rd year sort of became my mentor, and he showed me what ray and path tracing are, and what you can learn from it. Since then I&rsquo;ve made several, and I started on this one somewhere around March 2016. It started out as a small project, but I kept adding new things (especially when I started reading the PBR book (the first info source below)). It is a project in which I try out new things, new designs, and it has seen constant rewrites. In it you can find different naming conventions from different periods in time, &lsquo;#defines&rsquo; and &lsquo;static constexpr&rsquo; used almost interchangeably for values, making it a project uniquely representative of my learning curve and interests.</p>
+<p>I started with my path tracer somewhere in March 2017 and still continue to work on it. At the start of the program, I made a basic ray tracer. A few weeks later I borrowed a book from the library (PBRT, click <a href="http://www.pbrt.org/">here</a> to learn more) which made me increase my goal to make a full blown physically based renderer. I followed the basic structure of PBRT for a long time but ultimately I added so many changes of my own that it&rsquo;s not really recognizable anymore.</p>
 
-<h3 id="the-goal">The goal</h3>
+<p>The path tracer is fully written in C++ and tries to avoid external libraries when possible. Currently I only use a library for font rendering and a framework for rendering the image to the screen each frame.</p>
 
-<p>Get as far as possible. I have plenty of ideas, and I will probably continue working on this project low key for the years to come. The long term goals are to make somewhat of a scene editor, plenty of optimizations and de-noising features, multiple renderer types (ray tracer, rasterizer for quick previews) and much more. For now, the short term goals are to fix the bug with the normals on triangle meshes and to get texture and model loading in. I also have many other ideas such as writing more BXDFs, post processing effects and easy object placement in the scene, because working through a Json file isn&rsquo;t exactly user friendly.</p>
+<p>You can see an image rendered by my path tracer atop most of the pages of my portfolio.
 
-<h3 id="features">Features</h3>
+<figure>
+    
+        <img src="/images/path-tracer.png" alt="Latest and greatest render of my path tracer" />
+    
+    
+    <figcaption>
+        <p>
+        Latest and greatest render of my path tracer
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+</p>
 
-<p>My path tracer currently supports a number of features. They might still be small, but they are very flexible, and extending them will be quite easy, due to the heavy use of interfaces.</p>
-
-<h5 id="feature-list">Feature list:</h5>
+<h3 id="what-i-did">What I did</h3>
 
 <ul>
-<li>Multiple render modes
-
-<ul>
-<li>Ray Traced multi depth (with point lights),</li>
-<li>Ray Traced Single Depth (just trace a ray and put the diffuse colour on the screen),</li>
-<li>Path Traced (all out fanciness),</li>
-<li>Multiple debug renderers such as BVH Depth and Normal rendering.</li>
-</ul></li>
-<li>Multiple primitives (triangles/meshes, spheres, disks, with the capability of adding more quite easily)</li>
-<li>Multiple Shading algorithms (I currently have a Mirror Material and a Diffuse Material)</li>
-<li>Easy extendibility (Filters, Primitives, Renderers, Cameras, Samplers)</li>
-<li>A Dual Acceleration Structure - A top level BVH (TopLevelBVH) which has all primitives (all meshes, spheres and disks in the scene), and a bottom level BVH (MiniBVH) for each mesh primitive. I did this because each primitive intersection is a virtual call, but a lot of layers in the BVH were for the triangles of the mesh, which were all of one type. By separating them I could get one slow  top level BVH to allow for multiple primitive types, and a fast mesh BVH to allow for big models. Also, this is more memory friendly as I have multiple instances of the same mesh/BVH combo, instead of baking them into the main BVH. This is more computationally expensive though, since I have to transform rays to mesh-space for an intersection test.</li>
-<li>typedefs for most built-in types. I can swap between floats and doubles by turning on or off a define.</li>
-<li>Multithreaded on release</li>
-<li>Several filters (to blur the image a bit to make it converge faster) on debug</li>
-<li>Json scene loading</li>
-<li>Custom Math (Vec2, template Vec3, 4x4 matrix, Transform class supporting angle axis rotations, Euler rotations, non-uniform scaling and translating)</li>
+<li>I kept the system adaptable: materials, renderers, samplers and cameras can be easily swapped out to try different types (basic inheritance).</li>
+<li>I made a post processing pipeline to apply screen space effects such as bloom, blur, black and white conversion and a denoising pass.</li>
+<li>I made Scene factory that reads from a json file</li>
+<li>Acceleration structures such as a SAH BVH with SSE ray-bounding box intersection</li>
+<li>custom math library (2 and 3d vectors and 4x4 matrices)</li>
+<li>Tried my hand at making a denoising sampler: it only samples the pixels that need it to better spend resources, but results are disappointing so far.</li>
 </ul>
 
-<h3 id="sources">Sources</h3>
-
-<p>I got information from a lot of sources, but there are a few that are worth special mention.</p>
-
-<h5 id="sources-of-information">Sources of information:</h5>
+<h3 id="sources-of-information">Sources of information:</h3>
 
 <ul>
 <li>Max Oomen, a fellow student who mentored a friend of mine and me throughout year one (he was in year 3 at the time)</li>
@@ -208,7 +206,7 @@
         <li class="list f5 w-100 hover-bg-white nl1">
           
           <a href="/post/meadow-folk/" class="link ph2 pv2 db black">
-            Meadow Folk
+            Arboreal
           </a>
         </li>
       
