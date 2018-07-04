@@ -23,7 +23,7 @@
     
 
     <meta property="og:title" content="AGR: The Fastest Drifter" />
-<meta property="og:description" content="Anti-Gravity Racing game" />
+<meta property="og:description" content="A local-multiplayer Anti-Gravity Racing game made with a custom engine for both PS4 and Windows." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://floriskappeyne.github.io/post/agr/" />
 
@@ -44,19 +44,19 @@
 
 
 <meta itemprop="name" content="AGR: The Fastest Drifter">
-<meta itemprop="description" content="Anti-Gravity Racing game">
+<meta itemprop="description" content="A local-multiplayer Anti-Gravity Racing game made with a custom engine for both PS4 and Windows.">
 
 
 <meta itemprop="datePublished" content="2017-04-14T11:25:05-04:00" />
 <meta itemprop="dateModified" content="2017-04-14T11:25:05-04:00" />
-<meta itemprop="wordCount" content="434">
+<meta itemprop="wordCount" content="454">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AGR: The Fastest Drifter"/>
-<meta name="twitter:description" content="Anti-Gravity Racing game"/>
+<meta name="twitter:description" content="A local-multiplayer Anti-Gravity Racing game made with a custom engine for both PS4 and Windows."/>
 
   </head>
 
@@ -108,7 +108,7 @@
         <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">AGR: The Fastest Drifter</h1>
         
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-            Anti-Gravity Racing game
+            A local-multiplayer Anti-Gravity Racing game made with a custom engine for both PS4 and Windows.
           </h2>
         
       </div>
@@ -121,18 +121,53 @@
       
   <div class="flex-l mt2 mw8 center">
     <article class="center cf pv5 ph3 ph4-ns mw7">
-      <p class="f6 b helvetica tracked">
-        
-        POST
-      </p>
-      <h1 class="f1 athelas">
-        AGR: The Fastest Drifter
-      </h1>
-        
-        
-      <time class="f6 mv4 dib tracked" datetime="2017-04-14T11:25:05-04:00">
-        April 14, 2017
-      </time>
+      
+      <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img black">
+        AGR is my first experience with building a custom engine to support a big team. It is also the project that is most impressive technologically
+      </section>
+      <br>
+      
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 3px;
+    text-align: left;
+    line-height: 1;
+}
+</style>
+</head>
+
+<div class="nested-links f5 lh-copy nested-copy-line-height"><dl>
+<table style="width:100%">
+  <tr>
+    <td><b>Engine:</b></td>
+    <td>custom engine (main game), Unity 5 (prototypes)</td>
+  </tr>
+  <tr>
+    <td><b>Tools:</b></td>
+    <td>P4V, Pivotal Tracker, Visual Studio 2017, ImGui, custom tools</td>
+  </tr>
+  <tr>
+    <td><b>Roles:</b></td>
+    <td>Tools programmer, UI programmer, Gameplay programmer</td>
+  </tr>
+  <tr>
+    <td><b>Team:</b></td>
+    <td>19 people (7 programmers, 6 designers, 7 artists)</td>
+  </tr>
+  <tr>
+    <td><b>Lifetime:</b></td>
+    <td>2017, 16 weeks</td>
+  </tr>
+</table>
+</div>
+
+      <br>
+      <br>
       <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray">
         
 
@@ -141,22 +176,28 @@
   This video cannot be played.
 </video>
 
-<h3 id="the-project">The project</h3>
+<h2 id="the-project">The project</h2>
 
-<p>AGR: The Fastest Drifter is an Anti-Gravity Racing game, made with the custom cross-platform (Windows and PS4) Voodoo Engine. Created by a team of 6 programmers at first (the first block of 8 weeks), and 19 people  (7 programmers, 12 designers and artists) at the end, it is one of the biggest projects I have worked on so far. In the end, it featured a fully functioning racing game for both single player and local multiplayer, audio, particle effects, several post processing effects on top of the physically based rendering, a complete game-flow with UI and intro cinematics and a suite of tools usable by designers to tweak the game while playing it.</p>
+<p>AGR: The Fastest Drifter is an Anti-Gravity Racing game, made with the custom cross-platform (Windows and PS4) Voodoo Rewind Racing Engine. Created by a team of 6 programmers at first (the first block of 8 weeks), and 19 people  (7 programmers, 12 designers and artists) at the end, it is one of the biggest projects I have worked on so far. In the end, it featured a fully functioning racing game for both single player and local multiplayer, audio, particle effects, several post processing effects on top of the physically based rendering, a complete game-flow with UI and intro cinematics and a suite of tools usable by designers to tweak the game while playing it.</p>
 
 <video width="720" controls>
   <source src="/images/agr-trailer.mp4" type="video/mp4">
   This video cannot be played.
 </video>
 
-<h3 id="what-i-did">What I did</h3>
+<h2 id="what-i-did">What I did</h2>
 
-<p>In the beginning of the project, I set up our asset pipeline. Its main feature was a standalone tool that converted OBJ and FBX files into our own binary format, for fast in engine loading. Later in the project, this was replaced by a Maya plugin that did the same thing.</p>
+<ul>
+<li>Tools programmer</li>
+<li>UI programmer</li>
+<li>Gameplay programmer</li>
+</ul>
 
-<p>Later in the first block, I started on UI support and made our game prettier, so that artists and designers would choose our game for next block.</p>
+<p>In the beginning of the project, I set up our asset pipeline, from content creators to in engine usage. Its main feature was a standalone tool that converted OBJ and FBX files into our own binary format, for fast in engine loading. Later in the project the tool was replaced by a Maya plugin, but the rest of the pipeline.</p>
 
-<p>The first week of the second block was for prototyping a game. I worked on a grappling hook prototype in unity, which was fun to play but not feasible in 3D (the prototype was mainly 2D), or at least not in 8 weeks.</p>
+<p>Later in the first block, I started on our UI system. The last few days I also made the game more attractive by finding pretty assets online, so that artists and designers would choose our game for next block.</p>
+
+<p>The first week of the second block was for prototyping a game. I worked on a 2D grappling hook prototype in unity, which was fun to play but not feasible in 3D (at least not in 8 weeks).</p>
 
 
 <figure>
@@ -196,7 +237,7 @@
 </figure>
 
 
-<p>As a small side note, the intro cinematic wasn&rsquo;t actually a video. There was no audio, and each frame was presented as a separate texture I loaded from disk, which was a terrible hack but it looked fancy (as long as you loaded from an SSD, not a network drive). But hey, it worked!</p>
+<p>As a small side note, the intro cinematic wasn&rsquo;t actually a video. There was no audio, and each frame was presented as a separate texture I loaded from disk, which was a terrible hack but it looked fancy, as long as you loaded from an SSD&hellip; But hey, it worked!</p>
 
       </section>
       
@@ -215,7 +256,7 @@
   <div class="bg-light-gray pa3">
     <ul>
       <li class="list b mb3">
-        2 More Posts
+        Other Projects:
       </li>
       
         <li class="list f5 w-100 hover-bg-white nl1">
@@ -228,7 +269,7 @@
         <li class="list f5 w-100 hover-bg-white nl1">
           
           <a href="/post/path-tracer/" class="link ph2 pv2 db black">
-            My main side project: A Path Tracer
+            My Path Tracer
           </a>
         </li>
       

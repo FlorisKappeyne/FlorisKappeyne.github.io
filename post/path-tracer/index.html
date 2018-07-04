@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>My Portfolio  | My main side project: A Path Tracer</title>
+    <title>My Portfolio  | My Path Tracer</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -22,8 +22,8 @@
 
     
 
-    <meta property="og:title" content="My main side project: A Path Tracer" />
-<meta property="og:description" content="My attempt at making something pretty" />
+    <meta property="og:title" content="My Path Tracer" />
+<meta property="og:description" content="A C&#43;&#43; based path tracer" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://floriskappeyne.github.io/post/path-tracer/" />
 
@@ -43,20 +43,20 @@
 
 
 
-<meta itemprop="name" content="My main side project: A Path Tracer">
-<meta itemprop="description" content="My attempt at making something pretty">
+<meta itemprop="name" content="My Path Tracer">
+<meta itemprop="description" content="A C&#43;&#43; based path tracer">
 
 
 <meta itemprop="datePublished" content="2017-04-15T11:00:59-04:00" />
 <meta itemprop="dateModified" content="2017-04-15T11:00:59-04:00" />
-<meta itemprop="wordCount" content="382">
+<meta itemprop="wordCount" content="458">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="My main side project: A Path Tracer"/>
-<meta name="twitter:description" content="My attempt at making something pretty"/>
+<meta name="twitter:title" content="My Path Tracer"/>
+<meta name="twitter:description" content="A C&#43;&#43; based path tracer"/>
 
   </head>
 
@@ -105,10 +105,10 @@
 </nav>
 
       <div class="tc-l pv6 ph3 ph4-ns">
-        <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">My main side project: A Path Tracer</h1>
+        <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">My Path Tracer</h1>
         
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-            My attempt at making something pretty
+            A C&#43;&#43; based path tracer
           </h2>
         
       </div>
@@ -121,22 +121,57 @@
       
   <div class="flex-l mt2 mw8 center">
     <article class="center cf pv5 ph3 ph4-ns mw7">
-      <p class="f6 b helvetica tracked">
-        
-        POST
-      </p>
-      <h1 class="f1 athelas">
-        My main side project: A Path Tracer
-      </h1>
-        
-        
-      <time class="f6 mv4 dib tracked" datetime="2017-04-15T11:00:59-04:00">
-        April 15, 2017
-      </time>
+      
+      <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img black">
+        My Path Tracer is a hobby project. I worked on this outside of school hours and will probably continue to do so for a long time. My Path tracer is a project that taught me a lot about subjects ranging from debugging and profiling all the way up to multi-threading, acceleration structures, SIMD, Optimization, templates and a whole lot more. I have no clear goals for this project, I just add things I find interesting.
+      </section>
+      <br>
+      
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 3px;
+    text-align: left;
+    line-height: 1;
+}
+</style>
+</head>
+
+<div class="nested-links f5 lh-copy nested-copy-line-height"><dl>
+<table style="width:100%">
+  <tr>
+    <td><b>Engine:</b></td>
+    <td>Chili DirectX framework</td>
+  </tr>
+  <tr>
+    <td><b>Tools:</b></td>
+    <td>Visual Studio 2017 Community</td>
+  </tr>
+  <tr>
+    <td><b>Roles:</b></td>
+    <td>Graphics, Tools and Engine programmer</td>
+  </tr>
+  <tr>
+    <td><b>Team:</b></td>
+    <td>Just me</td>
+  </tr>
+  <tr>
+    <td><b>Lifetime:</b></td>
+    <td>2017 - now, ongoing</td>
+  </tr>
+</table>
+</div>
+
+      <br>
+      <br>
       <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray">
         
 
-<h3 id="the-project">The project</h3>
+<h2 id="the-project">The project</h2>
 
 <p>I started with my path tracer somewhere in March 2017 and still continue to work on it. At the start of the program, I made a basic ray tracer. A few weeks later I borrowed a book from the library (PBRT, click <a href="http://www.pbrt.org/">here</a> to learn more) which made me increase my goal to make a full blown physically based renderer. I followed the basic structure of PBRT for a long time but ultimately I added so many changes of my own that it&rsquo;s not really recognizable anymore.</p>
 
@@ -161,25 +196,27 @@
 </figure>
 </p>
 
-<h3 id="what-i-did">What I did</h3>
+<h2 id="what-i-did">What I did</h2>
 
 <ul>
 <li>I kept the system adaptable: materials, renderers, samplers and cameras can be easily swapped out to try different types (basic inheritance).</li>
 <li>I made a post processing pipeline to apply screen space effects such as bloom, blur, black and white conversion and a denoising pass.</li>
-<li>I made Scene factory that reads from a json file</li>
+<li>I made a scene factory that reads from a json file</li>
 <li>Acceleration structures such as a SAH BVH with SSE ray-bounding box intersection</li>
-<li>custom math library (2 and 3d vectors and 4x4 matrices)</li>
+<li>custom math library (2 and 3d vectors and 4x4 matrices), because why not</li>
 <li>Tried my hand at making a denoising sampler: it only samples the pixels that need it to better spend resources, but results are disappointing so far.</li>
 </ul>
 
-<h3 id="sources-of-information">Sources of information:</h3>
+<h2 id="sources-of-information">Sources of information:</h2>
+
+<p>There are a few sources of information worth mentioning. The two top ones are by far the most important. Max introduced me to this wonderful subject, and Jacco Bikkers showed me just how amazing a path tracer can be. Both of them helped me a lot, and still do. ChiliTomatoNoodle also deserves some attention, his amazing C++ tutorial series helped me get into IGAD and I still watch it regularly. Here&rsquo;s the list:</p>
 
 <ul>
 <li>Max Oomen, a fellow student who mentored a friend of mine and me throughout year one (he was in year 3 at the time)</li>
 <li>Jacco Bikkers, who used to be a teacher at my school (inspiration, and the idea to do ray/path tracing)</li>
-<li>&ldquo;Physically based rendering : from theory to implementation&rdquo; by Matt Pharr, Wenzel Jakop and Greg Humphreys. (software design for Cameras, Samplers, Filters, Renderers etcetera)</li>
-<li><a href="https://www.scratchapixel.com/index.php?redirect">https://www.scratchapixel.com/index.php?redirect</a> (some of the basic math theory, intersection tests, general lookups)</li>
-<li>Jacco Bikkers&rsquo; thesis (using multiple acceleration structure layers. He uses three, but I think two will do for me so far)</li>
+<li><a href="http://www.pbrt.org/">Physically based rendering: from theory to implementation</a> by Matt Pharr, Wenzel Jakop and Greg Humphreys. (software design for Cameras, Samplers, Filters, Renderers etcetera)</li>
+<li><a href="https://www.scratchapixel.com/index.php?redirect">ScratchAPixel</a> (some of the basic math theory, intersection tests, general lookups)</li>
+<li><a href="https://jbikker.github.io/literature/Ray%20Tracing%20in%20Real-time%20Games%20-%202012.pdf">Jacco Bikkers&rsquo; thesis</a> (using multiple acceleration structure layers. He uses three, but I think two will do for me so far)</li>
 <li><a href="https://www.youtube.com/channel/UCsyHonfwHi4fLb2lkq0DEAA">https://www.youtube.com/channel/UCsyHonfwHi4fLb2lkq0DEAA</a> ChiliTomatoNoodle, a YouTuber who taught me how to program and whose framework I&rsquo;ve been using for almost every side project I have.</li>
 </ul>
 
@@ -200,7 +237,7 @@
   <div class="bg-light-gray pa3">
     <ul>
       <li class="list b mb3">
-        2 More Posts
+        Other Projects:
       </li>
       
         <li class="list f5 w-100 hover-bg-white nl1">
@@ -213,7 +250,7 @@
         <li class="list f5 w-100 hover-bg-white nl1">
           
           <a href="/post/path-tracer/" class="link ph2 pv2 db black o-50">
-            My main side project: A Path Tracer
+            My Path Tracer
           </a>
         </li>
       
