@@ -24,6 +24,27 @@
   </url>
   
   <url>
+    <loc>https://floriskappeyne.github.io/post/clouded/</loc>
+    <lastmod>2017-04-14T11:25:05-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://floriskappeyne.github.io/post/kick-the-pig/</loc>
+    <lastmod>2017-04-14T11:25:05-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://floriskappeyne.github.io/post/orbis/</loc>
+    <lastmod>2017-04-14T11:25:05-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://floriskappeyne.github.io/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
