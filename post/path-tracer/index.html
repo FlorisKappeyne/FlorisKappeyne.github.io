@@ -23,7 +23,7 @@
     
 
     <meta property="og:title" content="My Path Tracer" />
-<meta property="og:description" content="A C&#43;&#43; based path tracer" />
+<meta property="og:description" content="A C&#43;&#43; based path tracer." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://floriskappeyne.github.io/post/path-tracer/" />
 
@@ -44,19 +44,19 @@
 
 
 <meta itemprop="name" content="My Path Tracer">
-<meta itemprop="description" content="A C&#43;&#43; based path tracer">
+<meta itemprop="description" content="A C&#43;&#43; based path tracer.">
 
 
 <meta itemprop="datePublished" content="2017-04-15T11:00:59-04:00" />
 <meta itemprop="dateModified" content="2017-04-15T11:00:59-04:00" />
-<meta itemprop="wordCount" content="263">
+<meta itemprop="wordCount" content="375">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="My Path Tracer"/>
-<meta name="twitter:description" content="A C&#43;&#43; based path tracer"/>
+<meta name="twitter:description" content="A C&#43;&#43; based path tracer."/>
 
   </head>
 
@@ -68,7 +68,7 @@
 
   
   
-  <header class="cover bg-top" style="background-image: url('https://floriskappeyne.github.io/images/path-tracer.png');">
+  <header class="cover bg-top" style="background-image: url('https://floriskappeyne.github.io/images/path-tracer-4096spp.png');">
     <div class="pb3-m pb6-l bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
@@ -108,7 +108,7 @@
         <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">My Path Tracer</h1>
         
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-            A C&#43;&#43; based path tracer
+            A C&#43;&#43; based path tracer.
           </h2>
         
       </div>
@@ -175,12 +175,12 @@ th, td {
 
 <p>I started with my path tracer somewhere in March 2017 and still continue to work on it. At the start of the program, I made a basic ray tracer. A few weeks later I borrowed a book from the library (PBRT, click <a href="http://www.pbrt.org/">here</a> to learn more) which made me increase my goal to make a full blown physically based renderer. I followed the basic structure of PBRT for a long time but ultimately I added so many changes of my own that it&rsquo;s not really recognizable anymore. <a href="https://jbikker.github.io/literature/Ray%20Tracing%20in%20Real-time%20Games%20-%202012.pdf">Jacco Bikkers</a> and his thesis were also a huge help for me.</p>
 
-<p>I wrote the path tracer in C++ and tended to avoid external libraries, opting to make it myself instead. Currently I only use a library for font rendering and a framework for rendering the image to the screen each frame.</p>
+<p>I wrote the path tracer in C++, and don&rsquo;t use many libraries. The ones I do use are a for font rendering (FW1 Font Wrapper), for outputting a .png file (Tiny PNG Output) and for parsing .json files (JSONCPP). I also use a framework made by ChiliTomatoNoodle for rendering the image to the screen each frame, and for handling user input.</p>
 
 
 <figure>
     
-        <img src="/images/path-tracer.png" alt="Latest and greatest render of my path tracer" />
+        <img src="/images/path-tracer-4096spp.png" alt="Latest and greatest render of my path tracer" />
     
     
     <figcaption>
@@ -195,14 +195,25 @@ th, td {
 </figure>
 
 
+<p>The following video shows the renderer&rsquo;s images at varying samples per pixel. From noisiest to cleanest: 1, 4, 16, 64, 256, 1024 and 4096 samples per pixel.
+<video width="600" controls>
+  <source src="/images/path-tracer-spp.mp4" type="video/mp4">
+  This video cannot be played.
+</video></p>
+
+<p>I have many plans for the future. Some of them are for usability as an actual renderer (loading models and textures, ease of use, denoising) and some of them are just for fun (making my own scalable array class (like std::vector), next event estimation, bloom and other post processing effects).</p>
+
+<p>Download a toned down version <a href="/games/Renderer.zip">here</a>.</p>
+
 <h2 id="what-i-did">What I did</h2>
 
 <ul>
-<li>I kept the system adaptable: materials, renderers, samplers and cameras can be easily swapped out to try different types.</li>
-<li>I made a post processing pipeline to apply screen space effects such as bloom, blur, black and white conversion and a denoising pass.</li>
-<li>I made a simple scene factory that reads from a json file</li>
-<li>My acceleration structure is an SAH BVH with SSE ray-bounding box intersection</li>
-<li>Custom math library (2 and 3d vectors and 4x4 matrices)</li>
+<li>I made a path tracer that handles global illumination and multiple surfaces (diffuse, mirror and glass so far)</li>
+<li>I kept the system adaptable: materials, renderers and samplers can be easily swapped out to try different types.</li>
+<li>I made a simple scene factory that reads from json files</li>
+<li>My acceleration structure is an SAH optimized BVH with SSE accelerated ray-bounding box intersection</li>
+<li>most high profile code has been multithreaded</li>
+<li>Custom math library (2 and 3d vectors and 4x4 matrices) and</li>
 <li>Tried my hand at making a denoising sampler: it only samples the pixels that need it to better spend resources, but results are disappointing so far.</li>
 <li>I made Russian Roulette to speed up frame time.</li>
 </ul>
